@@ -1,0 +1,21 @@
+{
+  "name": "bibliotecaapi",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao **BibliotecaAPI**, um projeto de estudo com Node.js para a criação de uma API RESTful que gerencia uma biblioteca de livros. Este projeto foi desenvolvido com o objetivo de aprender os conceitos fundamentais do Node.js, Express e a criação de APIs.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValdemirPraxedes/BibliotecaAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValdemirPraxedes/BibliotecaAPI/issues"
+  },
+  "homepage": "https://github.com/ValdemirPraxedes/BibliotecaAPI#readme"
+}
