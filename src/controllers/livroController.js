@@ -42,8 +42,12 @@ class LivroController {
     static async atualizarLivro (req, res) {
         try {
         const id = req.params.id;
-        const livroEncontrado = await livro.findByIdAndUpdate(id, req.body);
-        res.status(200).json(livroEncontrado);
+        const novoLivro = req.body;
+        const autorEncontrado = await autor.findById(novoLivro.autor)
+
+        const livroCompleto = { ...novoLivro, autor: { ... autorEncontrado._doc }}
+        const livroCriado = await livro.findByIdAndUpdate(id, livroCompleto);
+        res.status(200).json(livroCriado);
     } catch(erro) {
         res.status(500).json({message: `${erro.message} - falha  na requisicao`});
     }
@@ -57,6 +61,17 @@ class LivroController {
     } catch(erro) {
         res.status(500).json({message: `${erro.message} - falha  na requisicao`});
     }
+    };
+
+    static async listaLivrosPorEditora (req, res) {
+        try {
+            const editora = req.query.editora;
+            const livrosEncontrado = await livro.find({editora});
+            res.status(200).json(livrosEncontrado);
+
+        } catch(erro) {
+            res.status(500).json({message: `${erro.message} - falha  na requisicao`});
+        }
     };
 };
 
